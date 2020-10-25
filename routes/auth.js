@@ -4,16 +4,14 @@
 */
 
 const { Router } =  require('express');
-
 const router = Router();
 
-router.get('/', ( req, res ) => {
+const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/auth');
 
-    console.log('Se requiere el /');
+router.post('/new', crearUsuario );
 
-    res.json({
-        ok:true
-    });
-});
+router.post('/', loginUsuario);
+
+router.get('/renew', revalidarToken);
 
 module.exports = router;

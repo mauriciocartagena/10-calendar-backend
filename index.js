@@ -1,5 +1,6 @@
 const express = require('express');
-const  dotenv = require('dotenv').config();
+require('dotenv').config();
+
 
 //Crear el servidor de express
 
@@ -8,6 +9,9 @@ const app = express();
 //Directorio Público
 
 app.use( express.static('public') );
+
+// Lectura y parseo del body
+app.use(express.json()); 
 
 
 //Rutas
