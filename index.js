@@ -1,10 +1,16 @@
 const express = require('express');
 require('dotenv').config();
 
+const { dbConnnection } = require('./database/config');
+
 
 //Crear el servidor de express
 
 const app = express();
+
+
+//Base de datos
+dbConnnection();
 
 //Directorio Público
 
@@ -24,6 +30,6 @@ app.use('/api/auth', require('./routes/auth'));
 
 app.listen(  process.env.PORT, () => {
 
-    console.log(`Servidor corriendo en puerto ${ process.env.PORT } `)
+    console.log(`Servidor corriendo en puerto ${ process.env.PORT } `);
 
 });
