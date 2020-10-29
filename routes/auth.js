@@ -22,7 +22,7 @@ router.post(
 
 router.post('/',
     [
-        check('name','El nombre es Obligatorio').not().isEmpty(),
+        // check('name','El nombre es Obligatorio').not().isEmpty(),
         check('email','El email es Obligatorio').isEmail(),
         validarCampos
     ],
